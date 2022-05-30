@@ -55,9 +55,15 @@
 
         // テクスチャー読み込み
         var textureLoader2 = new THREE.TextureLoader();  
-        var texture2 = textureLoader2.load("face.jpg");
+        var texture2 = textureLoader2.load("stone-bump.jpg");
         var mat2 = new THREE.MeshPhongMaterial();
         mat2.map = texture2;
+
+        // テクスチャー読み込み
+        var textureLoader3 = new THREE.TextureLoader();  
+        var texture3 = textureLoader3.load("face.jpg");
+        var mat3 = new THREE.MeshPhongMaterial();
+        mat3.map = texture3;
 
         // 箱を作成
         var geometry1 = new THREE.BoxGeometry(0.8, 0.8, 0.8);
@@ -75,9 +81,16 @@
 
         // 円柱を作成
         var geometry3 = new THREE.CylinderGeometry( 0.2, 0.5, 0.5, 20, 4 );
-        var Cylinder = new THREE.Mesh(geometry3, mat);
+        var Cylinder = new THREE.Mesh(geometry3, mat3);
         Cylinder.position.set(1.5,0,0);
         scene.add(Cylinder);
+
+        //なんかクネクネしてるやつ
+        var torusKnotGeometry = new THREE.TorusKnotGeometry( 1.5, 0.3, 20, 6, 3, 2 );
+        var torusKnotMaterial = new THREE. MeshPhongMaterial( { color: 0x0000ff, wireframe: true } );
+        var torusKnot = new THREE.Mesh( torusKnotGeometry, mat3 );
+        torusKnot.position.set( 0, 0, -15 );
+        scene.add( torusKnot );
 
 
         update();
