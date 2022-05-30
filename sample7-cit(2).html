@@ -53,12 +53,6 @@
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
 
-        // テクスチャー読み込み
-        var textureLoader2 = new THREE.TextureLoader();  
-        var texture2 = textureLoader2.load("face.png");
-        var mat2 = new THREE.MeshPhongMaterial();
-        mat2.map = texture2;
-
         // 箱を作成
         var geometry1 = new THREE.BoxGeometry(0.8, 0.8, 0.8);
         //var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
@@ -69,7 +63,7 @@
 
         // 球を作成
         var geometry2 = new THREE.SphereGeometry(0.5, 32, 32 ); ;
-        var Sphere = new THREE.Mesh(geometry2, mat2);
+        var Sphere = new THREE.Mesh(geometry2, mat);
         Sphere.position.set(0,0,0);
         scene.add(Sphere);
 
@@ -77,7 +71,7 @@
         var geometry3 = new THREE.CylinderGeometry( 0.2, 0.5, 0.5, 20, 4 );
         var Cylinder = new THREE.Mesh(geometry3, mat);
         Cylinder.position.set(1.5,0,0);
-        //scene.add(Cylinder);
+        scene.add(Cylinder);
 
 
         update();
