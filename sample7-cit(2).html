@@ -49,9 +49,15 @@
 
         // テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader();  
-        var texture = textureLoader.load("stone.png");
+        var texture = textureLoader.load("stonejpg");
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
+
+        // テクスチャー読み込み
+        var textureLoader2 = new THREE.TextureLoader();  
+        var texture2 = textureLoader2.load("face.jpg");
+        var mat2 = new THREE.MeshPhongMaterial();
+        mat2.map = texture2;
 
         // 箱を作成
         var geometry1 = new THREE.BoxGeometry(0.8, 0.8, 0.8);
