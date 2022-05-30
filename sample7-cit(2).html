@@ -86,10 +86,10 @@
         scene.add(Cylinder);
 
         //なんかクネクネしてるやつ
-        var torusKnotGeometry = new THREE.TorusKnotGeometry( 1.5, 0.3, 20, 6, 3, 2 );
+        var torusKnotGeometry = new THREE.TorusKnotGeometry( 1.5, 1, 20, 6, 3, 2 );
         var torusKnotMaterial = new THREE. MeshPhongMaterial( { color: 0x0000ff, wireframe: true } );
         var torusKnot = new THREE.Mesh( torusKnotGeometry, mat3 );
-        torusKnot.position.set( 0, 0, -15 );
+        torusKnot.position.set( 0, 5, 0 );
         scene.add( torusKnot );
 
 
@@ -112,6 +112,8 @@
           // 円柱を回転させる
           Cylinder.rotation.x += 0.01;
           Cylinder.rotation.y += 0.01;
+
+          torusKnot.rotation.y += 0.01;
         }
       }
     </script>
